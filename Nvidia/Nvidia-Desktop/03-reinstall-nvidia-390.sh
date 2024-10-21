@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p ~/Downloads/Softwares/
+
 sudo apt autoremove nvidia* --purge -y
 
 sudo apt install nvidia-cuda-toolkit -y
