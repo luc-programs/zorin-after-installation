@@ -216,7 +216,7 @@ then
     echo "O diretorio  ~/Installation/Script/zorin-after-installation/  ja existe"
 else
     echo -e "\n\n\n\n Scripts de instalacao do Zorin 17"
-    git clone https://github.com/lucgithub343/zorin-after-installation.git
+    git https://github.com/luc-programs/zorin-after-installation.git
     cp -r ~/Downloads/Softwares/zorin-after-installation/ ~/Installation/Script/
 fi
 
