@@ -199,7 +199,7 @@ fi
 
 
 ## Download Wallpapers
-if [ -d ~/Wallpaper/ ];
+if [ -d ~/wallpaper/ ];
 then
     echo "O diretorio  ~/Wallpaper/  ja existe"
 else
