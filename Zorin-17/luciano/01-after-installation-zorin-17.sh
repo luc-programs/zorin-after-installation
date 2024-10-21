@@ -204,7 +204,7 @@ then
     echo "O diretorio  ~/Wallpaper/  ja existe"
 else
     echo -e "\n\n\n\n Wallpapers"
-    git chttps://github.com/luc-programs/wallpapers.git
+    git clone https://github.com/luc-programs/wallpapers.git
     cp -r wallpapers/ ~/
 fi
 
@@ -216,7 +216,7 @@ then
     echo "O diretorio  ~/Installation/Script/zorin-after-installation/  ja existe"
 else
     echo -e "\n\n\n\n Scripts de instalacao do Zorin 17"
-    git https://github.com/luc-programs/zorin-after-installation.git
+    git clone https://github.com/luc-programs/zorin-after-installation.git
     cp -r ~/Downloads/Softwares/zorin-after-installation/ ~/Installation/Script/
 fi
 
@@ -329,7 +329,7 @@ then
     echo "O diretorio  database-docker-compose  ja existe"
 else
     echo -e "\n\n\n\n Docker Compose dos bancos de dados"
-    git https://github.com/luc-programs/database-docker-compose.git
+    git clone https://github.com/luc-programs/database-docker-compose.git
 
     cp -r ~/Downloads/Softwares/database-docker-compose/ ~/Installation/
 fi
