@@ -1,12 +1,6 @@
 #!/bin/bash
 
 
-
-## Criando diretorio Programas onde vao
-## ficar os programaas que precisao de
-## dwonloads para serem istalados
-mkdir -p ~/Downloads/Softwares/
-
 ## Criando diretorio .icons
 mkdir -p ~/.icons/
 
