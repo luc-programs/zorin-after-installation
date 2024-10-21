@@ -1,6 +1,17 @@
 #!/bin/bash
 
 
+## Criacao do diretorio ~/Downloads/Softwares/
+if [ -d ~/Downloads/Softwares/ ];
+then
+    echo "O diretorio  ~/Downloads/Softwares/  ja existe"
+else
+    echo -e "\n\n\n\n Wallpapers"
+    git clone https://github.com/luc-programs/wallpapers.git
+    cp -r wallpapers/ ~/
+fi
+
+
 ## Criando diretorio .icons
 mkdir -p ~/.icons/
 
