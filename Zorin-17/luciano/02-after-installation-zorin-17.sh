@@ -395,7 +395,7 @@ cd ~/Installation/vscode-vscodium-extensions
 
 
 
-sudo dpkg -i vs-codium_1.90.2.24171_amd64.deb
+sudo dpkg -i codium_1.94.2.24286_amd64.deb
 sudo apt --fix-broken install -y
 
 
