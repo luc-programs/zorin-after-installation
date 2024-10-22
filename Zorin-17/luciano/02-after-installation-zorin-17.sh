@@ -15,6 +15,96 @@ echo "**************************************************************************
 
 
 
+echo -e "\n\n\n ***************************************  INSTALANDO  VISUAL  STUDIO  CODE  E  EXTENCOES  ********************************************"
+
+
+sudo dpkg -i code_1.94.2-1728494015_amd64.deb
+sudo apt --fix-broken install -y
+
+
+## INSTALANDO  EXTENÇÕES  DO  VISUAL  STUDIO  CODE
+
+## Instalando Material Icon themes
+code --install-extension PKief.material-icon-theme
+
+
+## Instalando ESlint
+code --install-extension dbaeumer.vscode-eslint
+
+
+## Instlando GitLens
+code --install-extension eamodio.gitlens
+
+## Instlando Tabnine
+code --install-extension TabNine.tabnine-vscode
+
+## Suporte a arquivos yml
+code --install-extension redhat.vscode-yaml
+
+
+## Live Server para mostrar modificacoes na pagina
+code --install-extension ritwickdey.LiveServer
+
+## Executar shell Script
+#code --install-extension YasharHabibi.run-bash-script
+
+## Instalando Tema Dracula
+code --install-extension dracula-theme.theme-dracula
+
+## Instalando o Prettier que serve para formatador de codigo
+code --install-extension esbenp.prettier-vscode
+
+code --install-extension Dart-Code.flutter
+
+
+## INSTALANDO  PARENTESES  AUTOMATICOS  NOS  METODOS  JAVASCRIPT  E  TYPESCRIPT
+
+echo '{' | tee ~/.config/Code/User/settings.json
+
+## parenteses atumomaticos nas funcoes do JavaScript
+echo '"javascript.suggest.completeFunctionCalls": true,' | tee -a ~/.config/Code/User/settings.json
+
+## parenteses atumomaticos nos metodos do TypeScript
+echo '"typescript.suggest.completeFunctionCalls": true,' | tee -a ~/.config/Code/User/settings.json
+
+
+echo '}' | tee  -a ~/.config/Code/User/settings.json
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n ***********************************************  INSTALANDO  VISUAL  STUDIO  CODIUM  ************************************************"
+
+## Entrando no diretorio com as extencoes
+cd ~/Installation/vscode-vscodium-extensions
+
+
+
+sudo dpkg -i codium_1.94.2.24286_amd64.deb
+sudo apt --fix-broken install -y
+
+## Abringdo o Codium
+codium
+
+tempoParado=10
+echo "Parando o Script por $tempoParado abrir o Codium";
+sleep $tempoParado;
+echo "Continuando execucao do Script"
+
+
+## Copiando o arquivo de configuracao do VsCode para o VsCodium
+cp ~/.config/Code/User/settings.json ~/.config/VSCodium/User/
+
+
+## Entrando na para pasta de programas
+cd ~/Downloads/Softwares/
+
+echo "***********************************************************************************************************************************************"
+
+
+
 echo -e "\n\n\n************************************************** INSTALANDO  FLUTTER*****************************************************************"
 
 if [ -e flutter_linux_3.24.3-stable.tar.xz ];
@@ -325,88 +415,6 @@ fi
 
 echo "***********************************************************************************************************************************************"
 
-
-
-
-echo -e "\n\n\n ***************************************  INSTALANDO  VISUAL  STUDIO  CODE  E  EXTENCOES  ********************************************"
-
-
-sudo dpkg -i code_1.94.2-1728494015_amd64.deb
-sudo apt --fix-broken install -y
-
-
-## INSTALANDO  EXTENÇÕES  DO  VISUAL  STUDIO  CODE
-
-## Instalando Material Icon themes
-code --install-extension PKief.material-icon-theme
-
-
-## Instalando ESlint
-code --install-extension dbaeumer.vscode-eslint
-
-
-## Instlando GitLens
-code --install-extension eamodio.gitlens
-
-## Instlando Tabnine
-code --install-extension TabNine.tabnine-vscode
-
-## Suporte a arquivos yml
-code --install-extension redhat.vscode-yaml
-
-
-## Live Server para mostrar modificacoes na pagina
-code --install-extension ritwickdey.LiveServer
-
-## Executar shell Script
-#code --install-extension YasharHabibi.run-bash-script
-
-## Instalando Tema Dracula
-code --install-extension dracula-theme.theme-dracula
-
-## Instalando o Prettier que serve para formatador de codigo
-code --install-extension esbenp.prettier-vscode
-
-code --install-extension Dart-Code.flutter
-
-
-## INSTALANDO  PARENTESES  AUTOMATICOS  NOS  METODOS  JAVASCRIPT  E  TYPESCRIPT
-
-echo '{' | tee ~/.config/Code/User/settings.json
-
-## parenteses atumomaticos nas funcoes do JavaScript
-echo '"javascript.suggest.completeFunctionCalls": true,' | tee -a ~/.config/Code/User/settings.json
-
-## parenteses atumomaticos nos metodos do TypeScript
-echo '"typescript.suggest.completeFunctionCalls": true,' | tee -a ~/.config/Code/User/settings.json
-
-
-echo '}' | tee  -a ~/.config/Code/User/settings.json
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n ***********************************************  INSTALANDO  VISUAL  STUDIO  CODIUM  ************************************************"
-
-## Entrando no diretorio com as extencoes
-cd ~/Installation/vscode-vscodium-extensions
-
-
-
-sudo dpkg -i codium_1.94.2.24286_amd64.deb
-sudo apt --fix-broken install -y
-
-
-## Copiando o arquivo de configuracao do VsCode para o VsCodium
-cp ~/.config/Code/User/settings.json ~/.config/VSCodium/User/
-
-
-## Entrando na para pasta de programas
-cd ~/Downloads/Softwares/
-
-echo "***********************************************************************************************************************************************"
 
 
 
