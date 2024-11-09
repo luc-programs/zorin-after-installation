@@ -84,6 +84,19 @@ else
 fi
 
 
+echo -e "\n\n\n********************************************************* INSTALACAO  R **************************************************************"
+
+sudo apt update -y
+sudo apt install r-base r-base-dev -y
+
+R
+
+tempoParado=5
+echo "Parando o Script por $tempoParado segundos para ver a versao Da Linguagem R";
+sleep $tempoParado;
+echo "Continuando execucao do Script"
+
+
 
 
 echo -e "\n\n\n********************************************************* INSTALACAO  SDKMAN *********************************************************"
@@ -121,6 +134,18 @@ mvn -v
 
 ## https://www.baeldung.com/java-sdkman-intro
 
+
+
+echo -e "\n\n\n********************************************************* INSTALACAO  R **************************************************************"
+
+sudo apt update -y
+sudo apt install r-base r-base-dev -y
+
+tempoParado=5
+echo "Parando o Script por $tempoParado segundos para ver a versao Da Linguagem R";
+sleep $tempoParado;
+echo "Continuando execucao do Script"
+
 echo "***********************************************************************************************************************************************"
 
 
@@ -132,6 +157,38 @@ sudo add-apt-repository ppa:ondrej/php -y
 sudo apt update -y
 sudo apt install php8.2 -y
 php --version
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n********************************************************* INSTALACAO  PYTHON *********************************************************"
+
+sudo apt update -y
+
+sudo apt install -y software-properties-common build-essential libffi-dev libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev libffi-dev libssl-dev
+
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+
+sudo apt update -y
+
+sudo apt install -y python3.12 python3.12-venv
+
+python3.12 --version
+
+sudo apt install python3.12-distutils -y
+
+wget https://bootstrap.pypa.io/get-pip.py
+
+sudo python3.12 get-pip.py
+
+pip3 --version
+
+sudo apt autoremove -y
+
+echo -e "\n************ VERSAO  DO  PYTHON ************"
+python3 --version
 
 echo "***********************************************************************************************************************************************"
 
@@ -843,6 +900,8 @@ sudo apt install intellij-idea-ultimate -y
 ## Instalando o PHPStorm
 sudo apt install phpstorm -y
 
+sudo apt install pycharm-professional -y
+
 ## Instalando Android Studio
 sudo add-apt-repository ppa:maarten-fonville/android-studio -y
 sudo apt update -y
@@ -902,10 +961,30 @@ echo "**************************************************************************
 
 
 
-
 echo -e "\n\n\n************************************************** INSTALANDO  POSTGRESQL  ***********************************************************"
 
 cd ~/Installation/database-docker-compose/postgres/
+sudo docker compose up -d
+
+echo "***********************************************************************************************************************************************"
+
+
+
+echo -e "\n\n\n************************************************** INSTALANDO  ORACLE ****************************************************************"
+
+## Logar na Oracle
+docker login container-registry.oracle.com
+
+cd ~/Installation/database-docker-compose/oracle/
+sudo docker compose up -d
+
+echo "***********************************************************************************************************************************************"
+
+
+
+echo -e "\n\n\n************************************************** INSTALANDO  SQLSERVER *************************************************************"
+
+cd ~/Installation/database-docker-compose/sql-server/
 sudo docker compose up -d
 
 echo "***********************************************************************************************************************************************"
