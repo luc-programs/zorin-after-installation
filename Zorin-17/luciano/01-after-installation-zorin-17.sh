@@ -89,15 +89,13 @@ echo -e "\n\n\n********************************************************* INSTALA
 sudo apt update -y
 sudo apt install r-base r-base-dev -y
 
+## Ver se a lingugem R esta instalada
 R
 
 tempoParado=5
 echo "Parando o Script por $tempoParado segundos para ver a versao Da Linguagem R";
 sleep $tempoParado;
 echo "Continuando execucao do Script"
-
-
-
 
 echo -e "\n\n\n********************************************************* INSTALACAO  SDKMAN *********************************************************"
 
@@ -591,6 +589,16 @@ else
     wget https://github.com/luc-programs/pale-moon/releases/download/Pale-Moon/palemoon_33.1.1-1.gtk3_amd64.deb
 fi
 
+
+## Download Pale Moon
+if [ -e palemoon_33.1.1-1.gtk3_amd64.deb ];
+then
+    echo "O arquivo  palemoon_33.1.1-1.gtk3_amd64.deb  ja existe"
+else
+    echo -e "\n\n\n\n Pale Moon"
+    ## https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon
+    wget https://github.com/luc-programs/pale-moon/releases/download/Pale-Moon/palemoon_33.1.1-1.gtk3_amd64.deb
+fi
 
 
 
