@@ -383,6 +383,12 @@ sudo dpkg -i palemoon_33.1.1-1.gtk3_amd64.deb
 sudo apt --fix-broken install -y
 
 
+## Scene Builder
+sudo dpkg -i SceneBuilder-23.0.1.deb
+sudo apt --fix-broken install -y
+
+
+
 ## Slack desktop
 sudo dpkg -i slack-desktop-4.39.95-amd64.deb
 sudo apt --fix-broken install -y

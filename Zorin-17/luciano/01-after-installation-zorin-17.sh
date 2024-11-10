@@ -602,6 +602,18 @@ fi
 
 
 
+## Download Scene Builder
+if [ -e SceneBuilder-23.0.1.deb ];
+then
+    echo "O arquivo  SceneBuilder-23.0.1.deb  ja existe"
+else
+    echo -e "\n\n\n\n Scene Builder"
+    wget https://github.com/luc-programs/scene-builder/releases/download/scene-builder/SceneBuilder-23.0.1.deb
+fi
+
+
+
+
 ## Download Slack Desktop
 if [ -e slack-desktop-4.39.95-amd64.deb ];
 then
