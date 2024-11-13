@@ -914,21 +914,67 @@ echo "deb [signed-by=/usr/share/keyrings/jetbrains-ppa-archive-keyring.gpg arch=
 
 sudo apt update -y
 
-## Instalando Intellij ultimate
+
+
+echo -e "\n\n\n################################## INSTALACAO  INTELLIJ  ULTIMATE #################################"
+
 sudo apt install intellij-idea-ultimate -y
 
-## Instalando o PHPStorm
-sudo apt install phpstorm -y
+## Mudando o arquivo executavel que é um shell script para o arquivo binario
+sudo sed -ie 's\intellij-idea-ultimate .*%u\/opt/intellij-idea-ultimate/bin/idea\g' /usr/share/applications/intellij-idea-ultimate.desktop
+
+echo -e "\n\n\n###################################################################################################"
+
+
+
+echo -e "\n\n\n######################################## INSTALACAO  CLION ########################################"
+
+sudo apt install clion -y
+
+## Mudando o arquivo executavel que é um shell script para o arquivo binario
+sudo sed -ie 's\clion .*%u\/opt/clion/bin/clion\g' /usr/share/applications/clion.desktop
+
+echo -e "\n\n\n###################################################################################################"
+
+
+
+echo -e "\n\n\n####################################### INSTALACAO  PYCHARM #######################################"
 
 sudo apt install pycharm-professional -y
 
-## Instalando Android Studio
+## Mudando o arquivo executavel que é um shell script para o arquivo binario
+sudo sed -ie 's\pycharm-professional .*%u\/opt/pycharm-professional/bin/pycharm\g' /usr/share/applications/pycharm-professional.desktop
+
+echo -e "\n\n\n###################################################################################################"
+
+
+
+echo -e "\n\n\n###################################### INSTALACAO  PHP  STORM ######################################"
+
+sudo apt install phpstorm -y
+
+## Mudando o arquivo executavel que é um shell script para o arquivo binario
+sudo sed -ie 's\phpstorm .*%u\/opt/phpstorm/bin/phpstorm\g' /usr/share/applications/phpstorm.desktop
+
+echo -e "\n\n\n###################################################################################################"
+
+
+
+echo -e "\n\n\n################################### INSTALACAO  ANDROID  STUDIO ###################################"
+
+## Adicionando repositorio do Android Studio
 sudo add-apt-repository ppa:maarten-fonville/android-studio -y
 sudo apt update -y
+
+#Intalando Android Studio
 sudo apt install android-studio -y
 
+## Mudando o arquivo executavel que é um shell script para o arquivo binario
 sudo sed -i s/studio.sh/studio/g /usr/share/applications/android-studio.desktop
+
 sudo rm -r /opt/android-studio
+
+echo -e "\n\n\n###################################################################################################"
 
 
 echo "***********************************************************************************************************************************************"
