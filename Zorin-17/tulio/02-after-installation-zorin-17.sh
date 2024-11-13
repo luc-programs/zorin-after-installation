@@ -102,17 +102,6 @@ echo "**************************************************************************
 
 
 
-echo -e "\n\n\n******************************************************** INSTALANDO  POSTMAN *********************************************************"
-
-curl https://gist.githubusercontent.com/SanderTheDragon/1331397932abaa1d6fbbf63baed5f043/raw/postman-deb.sh | sh
-
-## URL do Script
-## https://gist.github.com/SanderTheDragon/1331397932abaa1d6fbbf63baed5f043
-
-echo "***********************************************************************************************************************************************"
-
-
-
 echo -e "\n\n\n********************************************* ADICIONANDO  SUPORTE  EXTENDIDO  AO  ZORIN *********************************************"
 
 ## https://ubuntu.com/pro/subscribe
@@ -175,11 +164,6 @@ sudo apt --fix-broken install -y
 
 ## Evolve
 sudo dpkg -i evolve-1.5.1.deb
-sudo apt --fix-broken install -y
-
-
-## GitKraken
-sudo dpkg -i gitkraken-amd64.deb
 sudo apt --fix-broken install -y
 
 
