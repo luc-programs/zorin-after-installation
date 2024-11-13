@@ -735,26 +735,6 @@ sudo sed -ie 's\pycharm-professional .*%u\/opt/pycharm-professional/bin/pycharm\
 echo -e "\n\n\n################################### FIM  DA INSTALACAO  PYCHARM ###################################"
 
 
-
-echo -e "\n\n\n################################### INSTALACAO  ANDROID  STUDIO ###################################"
-
-## Adicionando repositorio do Android Studio
-sudo add-apt-repository ppa:maarten-fonville/android-studio -y
-sudo apt update -y
-
-#Intalando Android Studio
-sudo apt install android-studio -y
-
-## Mudando o arquivo executavel que é um shell script para o arquivo binario
-sudo sed -i s/studio.sh/studio/g /usr/share/applications/android-studio.desktop
-
-sudo rm -r /opt/android-studio
-
-echo -e "\n\n\n################################ FIM DA INSTALACAO  ANDROID  STUDIO ################################"
-
-
-
-
 echo "***********************************************************************************************************************************************"
 
 
