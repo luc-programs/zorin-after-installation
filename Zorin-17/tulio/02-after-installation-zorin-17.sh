@@ -21,9 +21,8 @@ sudo apt update -y
 sudo apt install build-essential -y
 sudo apt install manpages-dev  -y
 
-wget https://github.com/luc-programs/wmware/releases/download/Vmware/VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-chmod +x VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-sudo ./VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
+chmod +x VMware-Workstation-Full-17.6.1-24319023.x86_64.bundle
+sudo ./VMware-Workstation-Full-17.6.1-24319023.x86_64.bundle
 
 
 ## Abrindo o VMware player via terminal

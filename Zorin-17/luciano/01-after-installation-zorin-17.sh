@@ -84,6 +84,14 @@ else
 fi
 
 
+
+echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS*********************************************************"
+
+sudo apt install ubuntu-restricted-extras -y
+
+echo "***********************************************************************************************************************************************"
+
+
 echo -e "\n\n\n********************************************************* INSTALACAO  R **************************************************************"
 
 sudo apt update -y
@@ -134,21 +142,6 @@ mvn -v
 
 
 
-echo -e "\n\n\n********************************************************* INSTALACAO  R **************************************************************"
-
-sudo apt update -y
-sudo apt install r-base r-base-dev -y
-
-tempoParado=5
-echo "Parando o Script por $tempoParado segundos para ver a versao Da Linguagem R";
-sleep $tempoParado;
-echo "Continuando execucao do Script"
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
 echo -e "\n\n\n********************************************************* INSTALACAO  PHP ************************************************************"
 
 sudo add-apt-repository ppa:ondrej/php -y
@@ -187,15 +180,6 @@ sudo apt autoremove -y
 
 echo -e "\n************ VERSAO  DO  PYTHON ************"
 python3 --version
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS*********************************************************"
-
-sudo apt install ubuntu-restricted-extras -y
 
 echo "***********************************************************************************************************************************************"
 
@@ -590,17 +574,6 @@ else
 fi
 
 
-## Download Pale Moon
-if [ -e palemoon_33.1.1-1.gtk3_amd64.deb ];
-then
-    echo "O arquivo  palemoon_33.1.1-1.gtk3_amd64.deb  ja existe"
-else
-    echo -e "\n\n\n\n Pale Moon"
-    ## https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon
-    wget https://github.com/luc-programs/pale-moon/releases/download/Pale-Moon/palemoon_33.1.1-1.gtk3_amd64.deb
-fi
-
-
 
 ## Download Scene Builder
 if [ -e SceneBuilder-23.0.1.deb ];
@@ -677,16 +650,6 @@ else
     wget https://github.com/luc-programs/vivaldi/releases/download/Vivaldi/vivaldi-stable_6.9.3447.54-1_amd64.deb
 fi
 
-
-
-## Download VMware Workstation
-if [ -e VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle ];
-then
-    echo "O arquivo  VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle  ja existe"
-else
-    echo -e "\n\n\n\n VMware Workstation"
-    wget https://github.com/luc-programs/wmware/releases/download/Vmware/VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-fi
 
 
 
