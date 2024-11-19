@@ -85,26 +85,6 @@ fi
 
 
 
-echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS*********************************************************"
-
-sudo apt install ubuntu-restricted-extras -y
-
-echo "***********************************************************************************************************************************************"
-
-
-echo -e "\n\n\n********************************************************* INSTALACAO  R **************************************************************"
-
-sudo apt update -y
-sudo apt install r-base r-base-dev -y
-
-## Ver se a lingugem R esta instalada
-R
-
-tempoParado=5
-echo "Parando o Script por $tempoParado segundos para ver a versao Da Linguagem R";
-sleep $tempoParado;
-echo "Continuando execucao do Script"
-
 echo -e "\n\n\n********************************************************* INSTALACAO  SDKMAN *********************************************************"
 
 
@@ -139,6 +119,37 @@ sdk install maven 3.9.8
 mvn -v
 
 ## https://www.baeldung.com/java-sdkman-intro
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n********************************************************* INSTALACAO  R **************************************************************"
+
+sudo apt update -y
+sudo apt install r-base r-base-dev -y
+
+## Ver se a lingugem R esta instalada
+R
+
+tempoParado=5
+echo "Parando o Script por $tempoParado segundos para ver a versao Da Linguagem R";
+sleep $tempoParado;
+echo "Continuando execucao do Script"
+
+echo "***********************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS*********************************************************"
+
+sudo apt install ubuntu-restricted-extras -y
+
+echo "***********************************************************************************************************************************************"
+
+
 
 
 
