@@ -16,8 +16,6 @@ echo "**************************************************************************
 
 echo -e "\n\n\n**************************************************INSTALANDO  VMWARE  PLAYER *********************************************************"
 
-chmod +x VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-
 ## Dependencias do VMware
 sudo apt update -y
 sudo apt install build-essential -y
