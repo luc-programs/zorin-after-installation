@@ -23,21 +23,8 @@ sudo apt update -y
 sudo apt install build-essential -y
 sudo apt install manpages-dev  -y
 
-
-## Baixando e einstalando VmWare Workstation
-if grep -qi '610' ~/Downloads/Softwares/testVga/testVga;
-then
-    wget https://github.com/luc-programs/wmware/releases/download/Vmware/VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-    chmod +x VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-    sudo ./VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-elif grep -qi '620' ~/Downloads/Softwares/testVga/testVga;
-  then
-    wget https://github.com/luc-programs/wmware/releases/download/Vmware/VMware-Workstation-Full-17.6.1-24319023.x86_64.bundle
-    chmod +x VMware-Workstation-Full-17.6.1-24319023.x86_64.bundle
-    sudo ./VMware-Workstation-Full-17.6.1-24319023.x86_64.bundle
-  else
-    echo "valor invalido"
-fi
+chmod +x VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
+sudo ./VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
 
 ## Alterando icone  do VMwareskypeforlinux-64.deb
 ## sudo mkdir /opt/vmware-icon/
@@ -55,6 +42,7 @@ else
     echo 'mks.gl.allowBlacklistedDrivers = "TRUE"' >> ~/.vmware/preferences
 fi
 
+## sudo apt-get install open-vm-tools
 echo -e "\n\n\n**************************************************************************************************************************************"
 
 

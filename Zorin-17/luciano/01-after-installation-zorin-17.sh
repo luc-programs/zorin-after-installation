@@ -663,6 +663,16 @@ fi
 
 
 
+## Download Vivaldi
+if [ -e VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle ];
+then
+    echo "O arquivo  VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle   ja existe"
+else
+    echo -e "\n\n\n\n VMware"
+    wget https://github.com/luc-programs/wmware/releases/download/Vmware/VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
+fi
+
+
 
 ## Download Serial VMware Workstation
 if [ -e serial-vmware-workstation.txt ];
