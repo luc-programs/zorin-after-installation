@@ -62,6 +62,10 @@ code --install-extension PKief.material-icon-theme
 code --install-extension dbaeumer.vscode-eslint
 
 
+## Instalando o Live Preview para ver as paginas HTML no Visual Studio Code
+code --install-extension ms-vscode.live-server
+
+
 ## Instlando GitLens
 code --install-extension eamodio.gitlens
 
