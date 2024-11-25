@@ -54,6 +54,16 @@ cd ~/Downloads/Softwares/
 
 
 
+## Criando modelo de arquivo texto plano
+if [ -e ~/Templates/text-plain ];
+then
+    echo "O arquivo  text-plain  ja existe"
+else
+    touch ~/Templates/text-plain
+fi
+
+
+
 ## Criando modelo de arquivo shell script
 if [ -e ~/Templates/shell-script.sh ];
 then
