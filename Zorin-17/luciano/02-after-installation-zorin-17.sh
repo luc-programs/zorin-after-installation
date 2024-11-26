@@ -61,6 +61,9 @@ code --install-extension PKief.material-icon-theme
 ## Instalando ESlint
 code --install-extension dbaeumer.vscode-eslint
 
+## Instalando extencao para digitar so o inicio da tag HTML e depois dar TAB para completar
+code --install-extension abusaidm.html-snippets
+
 
 ## Instalando o Live Preview para ver as paginas HTML no Visual Studio Code
 code --install-extension ms-vscode.live-server
