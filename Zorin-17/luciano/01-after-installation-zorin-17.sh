@@ -442,6 +442,43 @@ fi
 
 
 
+## Instacao do programa BR Modelo
+if [ -d ~/.local/share/br-modelo/ ];
+then
+    echo "O diretorio  ~/.local/share/br-modelo/  ja existe"
+else
+    if [ ! -e BrModelo/brModelo.jar ];
+    then
+        wget https://github.com/luc-programs/br-modelo/releases/download/BrModelo/brModelo.jar
+    fi
+
+    if [ ! -e brModelo.jpg ];
+    then
+        wget https://github.com/luc-programs/br-modelo/releases/download/BrModelo/brModelo.jpg
+    fi
+
+
+    mkdir -p ~/.local/share/br-modelo/
+
+    cp brModelo.jar ~/.local/share/br-modelo/
+    cp brModelo.jpg ~/.local/share/br-modelo/
+
+    mkdir -p ~/.local/share/applications/
+    echo "[Desktop Entry]" | tee ~/.local/share/applications/br-modelo.desktop
+    echo "Name=BrModelo" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "Comment=Java" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "Keywords=java" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "Exec=java -jar /home/luciano/.local/share/br-modelo/brModelo.jar" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "Icon=/home/luciano/.local/share/br-modelo/brModelo.jpg" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "Terminal=false" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "X-MultipleArgs=false" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "Type=Application" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "MimeType=application/x-java-archive" | tee -a ~/.local/share/applications/br-modelo.desktop
+    echo "StartupNotify=true" | tee -a ~/.local/share/applications/br-modelo.desktop
+fi
+
+
+
 ## Download Balena Etcher Icon
 if [ -e Etcher-icon.png];
 then
