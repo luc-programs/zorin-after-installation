@@ -896,7 +896,24 @@ sudo apt install chromium-browser -y
 ## Instalando maquina virtual Gnome Boxes
 sudo apt install gnome-boxes -y
 
-## Instalando Navegador Brave
+## Instalando ferramenta de Backup
+sudo apt install luckybackup-data -y
+
+
+
+############################################################## INSTALACAO  DO  SPOTIFY ##############################################################
+
+curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt update -y
+sudo apt install spotify-client -y
+
+################################################################# FIM  DO  SPOTIFY ##################################################################
+
+
+
+########################################################## INSTALACAO  DO  NAVEGADOR BRAVE ##########################################################
+
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 echo 'deb http://download.opensuse.org/repositories/home:/stevenpusser/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:stevenpusser.list
@@ -904,7 +921,12 @@ curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_
 sudo apt update -y
 sudo apt install brave-browser -y
 
-## Instalando Navegador Waterfox
+############################################################# FIM  DA  NAVEGADOR BRAVE ##############################################################
+
+
+
+######################################################### INSTALACAO  DO  NAVEGADOR WATERFOX ########################################################
+
 sudo apt update -y
 sudo apt install software-properties-common apt-transport-https curl -y
 curl -fsSL https://download.opensuse.org/repositories/home:hawkeye116477:waterfox/xUbuntu_22.04/Release.key | sudo gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_hawkeye116477_waterfox.gpg > /dev/null
@@ -912,8 +934,8 @@ echo 'deb http://download.opensuse.org/repositories/home:/hawkeye116477:/waterfo
 sudo apt update -y
 sudo apt install waterfox-g-kpe -y
 
-## Instalando ferramenta de Backup
-sudo apt install luckybackup-data -y
+######################################################## INSTALACAO  DO  NAVEGADOR WATERFOX #######################################################
+
 
 
 ######################################################## INSTALACAO  DO  NAVEGADOR LIBRE-WOLF #######################################################
@@ -928,6 +950,8 @@ sudo apt update -y
 sudo apt install librewolf -y
 
 ########################################################### FIM  DA  NAVEGADOR LIBRE-WOLF ###########################################################
+
+echo -e "\n\n\n**************************************************************************************************************************************"
 
 
 
