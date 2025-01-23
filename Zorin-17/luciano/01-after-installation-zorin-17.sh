@@ -37,7 +37,7 @@ mkdir -p ~/Projects/Java
 ## Criando diretorio de projetos do Angular
 mkdir -p ~/Projects/Angular
 
-
+a
 ## Criando diretorio Script de Projetos do React
 mkdir -p ~/Projects/React
 
@@ -419,12 +419,12 @@ fi
 
 
 ## Download Apache Netbeans
-if [ -e apache-netbeans_23-1_all.deb ];
+if [ -e apache-netbeans_24-1_all.deb ];
 then
-    echo "O arquivo  apache-netbeans_23-1_all.debb  ja existe"
+    echo "O arquivo  apache-netbeans_24-1_all.deb"
 else
     echo -e "\n\n\n\n Apache Netbeans"
-    wget https://github.com/luc-programs/apache-netbeans/releases/download/Apache-Netbeans/apache-netbeans_23-1_all.deb
+    wget https://github.com/luc-programs/apache-netbeans/releases/download/Apache-Netbeans/apache-netbeans_24-1_all.deb
 fi
 
 
@@ -451,53 +451,25 @@ fi
 
 
 
-## Instacao do programa BR Modelo
-if [ -d ~/.local/share/br-modelo/ ];
+## Download BrModelo
+if [ -e br-modelo-3.3.2.deb];
 then
-    echo "O diretorio  ~/.local/share/br-modelo/  ja existe"
+    echo "O arquivo  br-modelo-3.3.2.deb  ja existe"
 else
-    if [ ! -e BrModelo/brModelo.jar ];
-    then
-        wget https://github.com/luc-programs/br-modelo/releases/download/BrModelo/brModelo.jar
-    fi
+    echo -e "\n\n\n\n br-modelo-3.3.2.deb"
+    wget https://github.com/luc-programs/br-modelo/releases/download/BRModelo/br-modelo-3.3.2.deb
 
-    if [ ! -e brModelo.jpg ];
-    then
-        wget https://github.com/luc-programs/br-modelo/releases/download/BrModelo/brModelo.jpg
-    fi
-
-
-    mkdir -p ~/.local/share/br-modelo/
-
-    cp brModelo.jar ~/.local/share/br-modelo/
-    cp brModelo.jpg ~/.local/share/br-modelo/
-
-    mkdir -p ~/.local/share/applications/
-    echo "[Desktop Entry]" | tee ~/.local/share/applications/br-modelo.desktop
-    echo "Name=BrModelo" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "Comment=Java" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "Keywords=java" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "Exec=java -jar /home/luciano/.local/share/br-modelo/brModelo.jar" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "Icon=/home/luciano/.local/share/br-modelo/brModelo.jpg" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "Terminal=false" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "X-MultipleArgs=false" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "Type=Application" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "MimeType=application/x-java-archive" | tee -a ~/.local/share/applications/br-modelo.desktop
-    echo "StartupNotify=true" | tee -a ~/.local/share/applications/br-modelo.desktop
 fi
 
 
 
-## Download Balena Etcher Icon
-if [ -e Etcher-icon.png];
+## Download JDK
+if [ -e jdk-21_linux-x64_bin.deb];
 then
-    echo "O arquivo  Etcher-icon.png  ja existe"
+    echo "O arquivo  JDK  ja existe"
 else
-    echo -e "\n\n\n\n Balena Etcher Icon"
-    wget https://github.com/luc-programs/balena-etcher/releases/download/Balen-Etcher/Etcher-icon.png
-
-    sudo mkdir -p /opt/balena-etcher-icon/
-    sudo cp Etcher-icon.png /opt/balena-etcher-icon/
+    echo -e "\n\n\n\n JDK"
+    wget https://github.com/luc-programs/br-modelo/releases/download/BRModelo/jdk-21_linux-x64_bin.deb
 
 fi
 
@@ -623,6 +595,17 @@ else
 fi
 
 
+## Download Rstudio
+if [ -e rstudio-2024.12.0-467-amd64.deb ];
+then
+    echo "O arquivo  rstudio-2024.12.0-467-amd64.deb  ja existe"
+else
+    echo -e "\n\n\n\n Rstudio"
+    ## https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon
+    wget https://github.com/luc-programs/rstudio/releases/download/RStudio/rstudio-2024.12.0-467-amd64.deb
+fi
+
+
 
 ## Download Scene Builder
 if [ -e SceneBuilder-23.0.1.deb ];
@@ -632,7 +615,6 @@ else
     echo -e "\n\n\n\n Scene Builder"
     wget https://github.com/luc-programs/scene-builder/releases/download/scene-builder/SceneBuilder-23.0.1.deb
 fi
-
 
 
 

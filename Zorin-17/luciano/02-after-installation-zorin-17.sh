@@ -74,8 +74,8 @@ sudo apt update -y
 sudo apt install build-essential -y
 sudo apt install manpages-dev  -y
 
-chmod +x VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
-sudo ./VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle
+chmod +x VMware-Workstation-Full-17.5.1-24298084.x86_64.bundle
+sudo ./VMware-Workstation-Full-17.5.1-24298084.x86_64.bundle
 
 ## Alterando icone  do VMwareskypeforlinux-64.deb
 ## sudo mkdir /opt/vmware-icon/
@@ -343,13 +343,23 @@ sudo apt --fix-broken install -y
 sudo sed -i 's\Icon=balena-etcher\Icon=/opt/balena-etcher-icon/Etcher-icon.png\g' /usr/share/applications/balena-etcher.desktop
 
 
+## BR-Modelo
+sudo dpkg -i br-modelo-3.3.2.deb
+sudo apt --fix-broken install -y
+
+
+## JDK
+sudo dpkg -i jdk-21_linux-x64_bin.deb
+sudo apt --fix-broken install -y
+
+
 ## Chrome
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt --fix-broken install -y
 
 
 ## Dbeaver
-sudo dpkg -i dbeaver-le_23.2.0_amd64.deb
+sudo dpkg -i dbeaver-le_24.2.0_amd64.deb
 sudo apt --fix-broken install -y
 
 
@@ -400,7 +410,7 @@ sudo apt --fix-broken install -y
 
 
 ## Scene Builder
-sudo dpkg -i SceneBuilder-23.0.1.deb
+sudo dpkg -i SceneBuilder-24.0.1.deb
 sudo apt --fix-broken install -y
 
 
@@ -429,22 +439,22 @@ sudo apt --fix-broken install -y
 echo -e "\n\n\n ***************************************************  INSTALANDO  APACHE  NETBEANS ***************************************************"
 
 ## Apache Netbeans
-sudo dpkg -i apache-netbeans_23-1_all.deb
+sudo dpkg -i apache-netbeans_24-1_all.deb
 sudo apt --fix-broken install -y
 
 
 ## Baixando repositorio Classes do Git Hub
-if [ -d ~/.netbeans/23/config/Templates/Classes/ ];
+if [ -d ~/.netbeans/24/config/Templates/Classes/ ];
 then
-    echo "O diretorio  ~/.netbeans/23/config/Templates/Classes/  ja existe"
+    echo "O diretorio  ~/.netbeans/24/config/Templates/Classes/  ja existe"
 else
 
   ## Criando a pasta onde vao ficar os templates modificados
-  mkdir -p ~/.netbeans/23/config/Templates/
+  mkdir -p ~/.netbeans/24/config/Templates/
 
   echo -e "\n\n\n\n Clonando repositorio Classes do Git Hub"
   git clone https://github.com/lucgithub343/Classes.git
-  cp -r Classes/ ~/.netbeans/23/config/Templates/
+  cp -r Classes/ ~/.netbeans/24/config/Templates/
 fi
 
 echo "***********************************************************************************************************************************************"
