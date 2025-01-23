@@ -409,6 +409,11 @@ sudo dpkg -i palemoon_33.1.1-1.gtk3_amd64.deb
 sudo apt --fix-broken install -y
 
 
+## IDE para linguage R
+sudo dpkg -i rstudio-2024.12.0-467-amd64.deb
+sudo apt --fix-broken install -y
+
+
 ## Scene Builder
 sudo dpkg -i SceneBuilder-24.0.1.deb
 sudo apt --fix-broken install -y
