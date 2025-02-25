@@ -1,4 +1,4 @@
-#!/bin/bash
+chmod +x 01	#!/bin/bash
 
 
 ## Criacao do diretorio ~/Downloads/Softwares/
@@ -95,110 +95,16 @@ fi
 
 
 
-echo -e "\n\n\n********************************************************* INSTALACAO  SDKMAN *********************************************************"
-
-
-## Instalando SDKMAN
-curl -s "https://get.sdkman.io" | bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-## Instalando Java
-sdk install java 21.0.2-graalce
-sdk install java 17.0.12-oracle
-sdk install java 21.0.5-oracle
-
-## Listar todas as versoes do JAVA
-## sdk list java
-
-## Instalando Groovy
-sdk install groovy
-
-## Ver versão do groovy
-groovy -version
-
-## Instalando Kotlin ultima versao
-sdk install kotlin
-
-## Ver versão do Kotlin instalado
-kotlinc -version
-
-## Instalando o Maven
-sdk install maven 3.9.8
-
-## Ver versão do Maven
-mvn -v
-
-## https://www.baeldung.com/java-sdkman-intro
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n********************************************** INSTALANDO  RESTRICTED  EXTRAS*********************************************************"
+echo -e "\n\n\n******************************************************************************************* INSTALANDO  RESTRICTED  EXTRAS *******************************************************************************************"
 
 sudo apt install ubuntu-restricted-extras -y
 
-echo "***********************************************************************************************************************************************"
+echo "*******************************************************************************************************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n********************************************************* INSTALACAO  PHP ************************************************************"
-
-sudo add-apt-repository ppa:ondrej/php -y
-sudo apt update -y
-sudo apt install php8.2 -y
-php --version
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n********************************************************* INSTALACAO  R **************************************************************"
-
-sudo apt update -y
-sudo apt install r-base r-base-dev -y
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n********************************************************* INSTALACAO  PYTHON *********************************************************"
-
-sudo apt update -y
-
-sudo apt install -y software-properties-common build-essential libffi-dev libssl-dev zlib1g-dev libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev libffi-dev libssl-dev
-
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-
-sudo apt update -y
-
-sudo apt install -y python3.12 python3.12-venv
-
-python3.12 --version
-
-sudo apt install python3.12-distutils -y
-
-wget https://bootstrap.pypa.io/get-pip.py
-
-sudo python3.12 get-pip.py
-
-pip3 --version
-
-sudo apt autoremove -y
-
-echo -e "\n************ VERSAO  DO  PYTHON ************"
-python3 --version
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************* INSTALANDO  COMPACTADORES  E  DESCOMPACTADORES  ************************************************"
+echo -e "\n\n\n******************************************************************************** INSTALANDO  COMPACTADORES  E  DESCOMPACTADORES  *************************************************************************************"
 
 ## E nescessario instalar os compactadores
 ## e descompactadores aqui, porque
@@ -208,12 +114,12 @@ sudo apt update -y
 sudo apt install sharutils -y
 sudo apt install p7zip-full p7zip-rar lzma lzma-dev rar unrar-free p7zip ark ncompress -y
 
-echo "***********************************************************************************************************************************************"
+echo "*******************************************************************************************************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n************************************************** INSTALANDO  GIT *******************************************************************"
+echo -e "\n\n\n************************************************************************************************** INSTALANDO  GIT ***************************************************************************************************"
 
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt update -y
@@ -227,12 +133,65 @@ echo "Continuando execucao do Script"
 
 ## git config --global credential.helper store
 
-echo "***********************************************************************************************************************************************"
+echo "*******************************************************************************************************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n******************************************************* MISCELANIA ******************************************************************"
+echo -e "\n\n\n************************************************************************************************** INSTALANDO  MELD **************************************************************************************************"
+
+## Instalando e configurando Meld
+sudo apt install meld -y
+git config --global diff.tool meld
+git config --global difftool.meld.path "/usr/bin/meld"
+git config --global difftool.prompt false
+git config --global merge.tool meld
+git config --global mergetool.meld.path "/usr/bin/meld"
+git config --global mergetool.prompt false
+
+echo "*******************************************************************************************************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n************************************************************************************* INSTALANDO  O  DOCKER  E  DOCKER  COMPOSE  *************************************************************************************"
+
+# Add Docker's official GPG key:
+sudo apt update -y
+sudo apt install ca-certificates curl -y
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+# Update list oof repositories
+sudo apt update -y
+
+
+# Install Docker
+sudo apt install docker-ce\
+                 docker-ce-cli\
+                 containerd.io\
+                 docker-buildx-plugin\
+                 docker-compose-plugin -y
+
+
+## Adding logged in user to docker group
+sudo usermod -aG docker $USER
+
+echo "*******************************************************************************************************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n***************************************************************************************************** MISCELANIA *****************************************************************************************************"
 
 ## Download Compactador
 if [ -e compactar-tar-gz ];
@@ -400,12 +359,12 @@ else
     cp -r ~/Downloads/Softwares/database-docker-compose/ ~/Installation/
 fi
 
-echo "***********************************************************************************************************************************************"
+echo "*******************************************************************************************************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n************************************************** DOWNLOAD   DE  PROGRAMAS **********************************************************"
+echo -e "\n\n\n********************************************************************************************** DOWNLOAD   DE  PROGRAMAS **********************************************************************************************"
 
 ## Download 4K Video Downloader
 if [ -e 4kvideodownloaderplus_1.8.5-1_amd64.deb ];
@@ -452,24 +411,12 @@ fi
 
 
 ## Download BrModelo
-if [ -e br-modelo-3.3.2.deb];
+if [ -e br-modelo-3.3.2.deb ];
 then
     echo "O arquivo  br-modelo-3.3.2.deb  ja existe"
 else
     echo -e "\n\n\n\n br-modelo-3.3.2.deb"
     wget https://github.com/luc-programs/br-modelo/releases/download/BRModelo/br-modelo-3.3.2.deb
-
-fi
-
-
-
-## Download JDK
-if [ -e jdk-21_linux-x64_bin.deb];
-then
-    echo "O arquivo  JDK  ja existe"
-else
-    echo -e "\n\n\n\n JDK"
-    wget https://github.com/luc-programs/br-modelo/releases/download/BRModelo/jdk-21_linux-x64_bin.deb
 
 fi
 
@@ -508,16 +455,6 @@ fi
 
 
 
-## Download GitKraken
-if [ -e gitkraken-amd64.deb ];
-then
-    echo "O arquivo  gitkraken-amd64.deb  ja existe"
-else
-    echo -e "\n\n\n\n GitKraken"
-    wget https://github.com/luc-programs/git-kraken/releases/download/Git-kraken/gitkraken-amd64.deb
-fi
-
-
 
 ## Download Insync
 if [ -e insync_3.9.4.60020-jammy_amd64.deb ];
@@ -541,6 +478,28 @@ fi
 
 
 
+## Download JDK
+if [ -e jdk-21_linux-x64_bin.deb ];
+then
+    echo "O arquivo  JDK  ja existe"
+else
+    echo -e "\n\n\n\n JDK"
+    wget https://github.com/luc-programs/br-modelo/releases/download/BRModelo/jdk-21_linux-x64_bin.deb
+fi
+
+
+
+## Download Lombok
+if [ -e lombok.jar ];
+then
+    echo "O arquivo  lombok.jar  ja existe"
+else
+    echo -e "\n\n\n\n Lombok"
+    wget https://github.com/luc-programs/lombok/releases/download/lombok/lombok.jar
+fi
+
+
+
 ## Download Microsoft Edge
 if [ -e microsoft-edge-stable_130.0.2849.46-1_amd64.deb ];
 then
@@ -548,17 +507,6 @@ then
 else
     echo -e "\n\n\n\n Microsoft Edge"
     wget https://github.com/luc-programs/edge/releases/download/Edge/microsoft-edge-stable_130.0.2849.46-1_amd64.deb
-fi
-
-
-
-## Download Midori
-if [ -e midori_11.3.3_amd64.deb ];
-then
-    echo "O arquivo  midori_11.3.3_amd64.deb ja  existe"
-else
-    echo -e "\n\n\n\n Midori"
-    wget https://github.com/luc-programs/midori/releases/download/Midori/midori_11.3.3_amd64.deb
 fi
 
 
@@ -584,16 +532,6 @@ else
 fi
 
 
-## Download Pale Moon
-if [ -e palemoon_33.1.1-1.gtk3_amd64.deb ];
-then
-    echo "O arquivo  palemoon_33.1.1-1.gtk3_amd64.deb  ja existe"
-else
-    echo -e "\n\n\n\n Pale Moon"
-    ## https://software.opensuse.org/download.html?project=home%3Astevenpusser%3Apalemoon-GTK3&package=palemoon
-    wget https://github.com/luc-programs/pale-moon/releases/download/Pale-Moon/palemoon_33.1.1-1.gtk3_amd64.deb
-fi
-
 
 ## Download Rstudio
 if [ -e rstudio-2024.12.0-467-amd64.deb ];
@@ -607,35 +545,13 @@ fi
 
 
 
-## Download Scene Builder
-if [ -e SceneBuilder-23.0.1.deb ];
+## Download Spring Tool Suite
+if [ -e spring-tool-suite-4.28.1.RELEASE.deb ];
 then
-    echo "O arquivo  SceneBuilder-23.0.1.deb  ja existe"
+    echo "O arquivo  spring-tool-suite-4.28.1.RELEASE.deb  ja existe"
 else
-    echo -e "\n\n\n\n Scene Builder"
-    wget https://github.com/luc-programs/scene-builder/releases/download/scene-builder/SceneBuilder-23.0.1.deb
-fi
-
-
-
-## Download Slack Desktop
-if [ -e slack-desktop-4.39.95-amd64.deb ];
-then
-    echo "O arquivo  slack-desktop-4.39.95-amd64.deb  ja existe"
-else
-    echo -e "\n\n\n\n Slack Desktop"
-    wget https://github.com/luc-programs/slack/releases/download/Slack/slack-desktop-4.39.95-amd64.deb
-fi
-
-
-
-## Download SlimJet browser
-if [ -e slimjet_amd64.deb ];
-then
-    echo "O arquivo  slimjet_amd64.deb  ja existe"
-else
-    echo -e "\n\n\n\n SlimJet browser"
-    wget https://github.com/luc-programs/slimjet/releases/download/Slimjet/slimjet_amd64.deb
+    echo -e "\n\n\n\n Spring tool suite"
+    wget https://github.com/luc-programs/spring-tool-suite/releases/download/sts/spring-tool-suite-4.28.1.RELEASE.deb
 fi
 
 
@@ -661,16 +577,6 @@ else
 fi
 
 
-## Download Visual Studio Codium
-if [ -e codium_1.94.2.24286_amd64.deb ];
-then
-    echo "O arquivo  codium_1.94.2.24286_amd64.deb   ja existe"
-else
-    echo -e "\n\n\n\n Visual Studio Codium"
-    wget https://github.com/luc-programs/visual-studio-codium/releases/download/Visual-Studio-Codium/codium_1.94.2.24286_amd64.deb
-fi
-
-
 
 ## Download Vivaldi
 if [ -e vivaldi-stable_6.9.3447.54-1_amd64.deb ];
@@ -683,7 +589,7 @@ fi
 
 
 
-## Download Vivaldi
+## Download Wmware workstation
 if [ -e VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle ];
 then
     echo "O arquivo  VMware-Workstation-Full-17.5.1-23298084.x86_64.bundle   ja existe"
@@ -703,80 +609,12 @@ else
     wget https://github.com/luc-programs/wmware/releases/download/Vmware/serial-vmware-workstation.txt
 fi
 
-
-
-
-echo -e "\n\n\n********************************************* INSTALANDO  O  DOCKER  E  DOCKER  COMPOSE  *********************************************"
-
-# Add Docker's official GPG key:
-sudo apt update -y
-sudo apt install ca-certificates curl -y
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-
-# Add the repository to Apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-
-# Update list oof repositories
-sudo apt update -y
-
-
-# Install Docker
-sudo apt install docker-ce\
-                 docker-ce-cli\
-                 containerd.io\
-                 docker-buildx-plugin\
-                 docker-compose-plugin -y
-
-
-## Adding logged in user to docker group
-sudo usermod -aG docker $USER
-
-echo "***********************************************************************************************************************************************"
+echo -e "\n\n\n**********************************************************************************************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n************************************* CONFIGURAR  CELULAR  PARA  DESENVOLVIMENTO  ANDROID ********************************************"
-
-sudo usermod -aG plugdev $LOGNAME
-sudo apt install android-sdk-platform-tools-common -y
-echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  ADB *******************************************************************"
-
-## Instalando ADB
-sudo apt update -y
-sudo apt install adb -y
-sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
-sudo apt install qemu-kvm -y
-sudo adduser $USER kvm
-
-echo "***********************************************************************************************************************************************"
-
-
-
-echo -e "\n\n\n************************************************ INSTALANDO  DO  SUPORTE  A  BLUETOOTH ***********************************************"
-
-sudo snap install bluez
-
-echo "***********************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n************************************************** INSTALANDO  APLICATIVOS  APT ******************************************************"
+echo -e "\n\n\n******************************************************************************************** INSTALANDO  APLICATIVOS  APT ********************************************************************************************"
 
 ## Atualizando PPA
 sudo apt update -y
@@ -883,18 +721,19 @@ sudo apt install luckybackup-data -y
 
 
 
-############################################################## INSTALACAO  DO  SPOTIFY ##############################################################
+
+echo -e "\n\n\n###################################################################### INSTALACAO  DO  SPOTIFY #####################################################################"
 
 curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt update -y
 sudo apt install spotify-client -y
 
-################################################################# FIM  DO  SPOTIFY ##################################################################
+echo -e "\n\n\n####################################################################################################################################################################"
 
 
 
-########################################################## INSTALACAO  DO  NAVEGADOR BRAVE ##########################################################
+echo -e "\n\n\n################################################################# INSTALACAO  DO  NAVEGADOR  BRAVE #################################################################"
 
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -903,41 +742,27 @@ curl -fsSL https://download.opensuse.org/repositories/home:stevenpusser/xUbuntu_
 sudo apt update -y
 sudo apt install brave-browser -y
 
-############################################################# FIM  DA  NAVEGADOR BRAVE ##############################################################
+echo -e "\n\n\n###################################################################################################################################################################"
 
 
 
-######################################################### INSTALACAO  DO  NAVEGADOR WATERFOX ########################################################
+echo -e "\n\n\n################################################################ INSTALACAO  DO  NAVEGADOR  WATERFOX ##############################################################"
 
 sudo apt update -y
-sudo apt install software-properties-common apt-transport-https curl -y
-curl -fsSL https://download.opensuse.org/repositories/home:hawkeye116477:waterfox/xUbuntu_22.04/Release.key | sudo gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_hawkeye116477_waterfox.gpg > /dev/null
 echo 'deb http://download.opensuse.org/repositories/home:/hawkeye116477:/waterfox/xUbuntu_22.04/ /' | sudo tee /etc/apt/sources.list.d/home:hawkeye116477:waterfox.list
+curl -fsSL https://download.opensuse.org/repositories/home:hawkeye116477:waterfox/xUbuntu_22.04/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_hawkeye116477_waterfox.gpg > /dev/null
 sudo apt update -y
-sudo apt install waterfox-g-kpe -y
+sudo apt install waterfox-kde -y
 
-######################################################## INSTALACAO  DO  NAVEGADOR WATERFOX #######################################################
+echo -e "\n\n\n###################################################################################################################################################################"
 
 
-
-######################################################## INSTALACAO  DO  NAVEGADOR LIBRE-WOLF #######################################################
-
-sudo apt update -y
-sudo apt install extrepo -y
-sudo extrepo enable librewolf
-sudo apt --allow-releaseinfo-change update
-
-sudo apt update -y
-
-sudo apt install librewolf -y
-
-########################################################### FIM  DA  NAVEGADOR LIBRE-WOLF ###########################################################
-
-echo -e "\n\n\n**************************************************************************************************************************************"
+echo -e "\n\n\n**********************************************************************************************************************************************************************************************************************"
 
 
 
-echo -e "\n\n\n*************************************************** INSTALANDO  IDES  DA  JETBRAINS **************************************************"
+
+echo -e "\n\n\n******************************************************************************************* INSTALANDO  IDES  DA  JETBRAINS ******************************************************************************************"
 
 ## https://github.com/JonasGroeger/jetbrains-ppa
 
@@ -952,51 +777,18 @@ sudo apt update -y
 
 
 
-echo -e "\n\n\n################################## INSTALACAO  INTELLIJ  ULTIMATE #################################"
+echo -e "\n\n\n################################################################## INSTALACAO  INTELLIJ  ULTIMATE ##################################################################"
 
 sudo apt install intellij-idea-ultimate -y
 
 ## Mudando o arquivo executavel que é um shell script para o arquivo binario
 sudo sed -ie 's\intellij-idea-ultimate .*%u\/opt/intellij-idea-ultimate/bin/idea\g' /usr/share/applications/intellij-idea-ultimate.desktop
 
-echo -e "\n\n\n###################################################################################################"
+echo -e "\n\n\n####################################################################################################################################################################"
 
 
 
-echo -e "\n\n\n######################################## INSTALACAO  CLION ########################################"
-
-sudo apt install clion -y
-
-## Mudando o arquivo executavel que é um shell script para o arquivo binario
-sudo sed -ie 's\clion .*%u\/opt/clion/bin/clion\g' /usr/share/applications/clion.desktop
-
-echo -e "\n\n\n###################################################################################################"
-
-
-
-echo -e "\n\n\n####################################### INSTALACAO  PYCHARM #######################################"
-
-sudo apt install pycharm-professional -y
-
-## Mudando o arquivo executavel que é um shell script para o arquivo binario
-sudo sed -ie 's\pycharm-professional .*%u\/opt/pycharm-professional/bin/pycharm\g' /usr/share/applications/pycharm-professional.desktop
-
-echo -e "\n\n\n###################################################################################################"
-
-
-
-echo -e "\n\n\n###################################### INSTALACAO  PHP  STORM ######################################"
-
-sudo apt install phpstorm -y
-
-## Mudando o arquivo executavel que é um shell script para o arquivo binario
-sudo sed -ie 's\phpstorm .*%u\/opt/phpstorm/bin/phpstorm\g' /usr/share/applications/phpstorm.desktop
-
-echo -e "\n\n\n###################################################################################################"
-
-
-
-echo -e "\n\n\n################################### INSTALACAO  ANDROID  STUDIO ###################################"
+echo -e "\n\n\n#################################################################### INSTALACAO  ANDROID  STUDIO ##################################################################"
 
 ## Adicionando repositorio do Android Studio
 sudo add-apt-repository ppa:maarten-fonville/android-studio -y
@@ -1010,15 +802,15 @@ sudo sed -i s/studio.sh/studio/g /usr/share/applications/android-studio.desktop
 
 sudo rm -r /opt/android-studio
 
-echo -e "\n\n\n###################################################################################################"
+echo -e "\n\n\n###################################################################################################################################################################"
 
 
-echo "***********************************************************************************************************************************************"
+echo "*******************************************************************************************************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n******************************************** SUBSTITUINDO  FIREFOX  FLATPAK  PELO  NATIVO  *******************************************"
+echo -e "\n\n\n******************************************************************************************* SUBSTITUINDO  FIREFOX  FLATPAK  PELO  NATIVO  ****************************************************************************"
 
 flatpak uninstall org.mozilla.firefox -y
 
@@ -1033,32 +825,47 @@ echo "Pin-Priority: 1001"|sudo tee -a /etc/apt/preferences.d/mozilla
 sudo apt update -y
 sudo apt install firefox -y
 
-echo "***********************************************************************************************************************************************"
+echo "*******************************************************************************************************************************************************************************************************************************"
 
 
 
 
-echo -e "\n\n\n************************************************** INSTALANDO  MELD ******************************************************************"
-
-## Instalando e configurando Meld
-sudo apt install meld -y
-git config --global diff.tool meld
-git config --global difftool.meld.path "/usr/bin/meld"
-git config --global difftool.prompt false
-git config --global merge.tool meld
-git config --global mergetool.meld.path "/usr/bin/meld"
-git config --global mergetool.prompt false
-
-echo "************************************************************************************************************************************************"
-
-
-
-
-echo -e "\n\n\n*************************************** REMOVENDO ARQUIVOS DA PASTA TEMPLATES  *******************************************************"
+echo -e "\n\n\n************************************************************************ REMOVENDO ARQUIVOS DA PASTA TEMPLATES  ******************************************************************************************************"
 
 rm ~/Templates/LibreOffice\ Calc.ods
 rm ~/Templates/LibreOffice\ Draw.odg
 rm ~/Templates/LibreOffice\ Impress.odp
 rm ~/Templates/LibreOffice\ Writer.odt
 
-echo -e "\n\n\n******************************************REINICIAR  O  COMPUTADOR********************************************************************"
+echo "*******************************************************************************************************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n*************************************************************************************** COMECANDO INSTALACAO DO RUBY *************************************************************************************************"
+
+
+sudo apt update -y
+
+sudo apt install git curl autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev -y
+
+
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+
+echo "*******************************************************************************************************************************************************************************************************************************"
+
+
+
+
+echo -e "\n\n\n************************************************************************************ COMECANDO  A  INSTALACAO  SUPORTE A BLUETOOH ************************************************************************************"
+
+sudo apt update -y
+sudo apt install inxi -y
+inxi -F --filter
+sudo apt reinstall --purge bluez gnome-bluetooth
+
+echo -e "\n\n\n************************************************************************************ REINICIAR  O  COMPUTADOR*********************************************************************************************************"
