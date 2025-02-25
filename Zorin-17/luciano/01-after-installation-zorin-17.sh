@@ -247,6 +247,19 @@ fi
 
 
 
+## Download do projeto com mapamento multibanco
+## Esse mapeamento serve para bancos de dados que usam identity ou sequence
+if [ -d ~/Projects/Java/hibernate-mapeamento-multibanco/ ];
+then
+    echo "O diretorio  ~/Projects/Java/hibernate-mapeamento-multibanco/  ja existe"
+else
+    echo -e "\n\n\n\n Projeto com mapeamento multibanco"
+    git clone https://github.com/luc-projects/hibernate-mapeamento-multibanco.git
+    cp -r ~/Downloads/Softwares/hibernate-mapeamento-multibanco/ ~/Projects/Java/
+fi
+
+
+
 
 ## Download tema Kimi Dark
 if [ -d ~/.themes/Kimi-dark-v40 ];
