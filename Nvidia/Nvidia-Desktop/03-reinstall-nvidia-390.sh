@@ -1,6 +1,15 @@
 #!/bin/bash
 
-mkdir -p ~/Downloads/Softwares/
+
+## Criacao do diretorio ~/Downloads/Softwares/
+if [ -d ~/Downloads/Softwares/ ];
+then
+    echo "O diretorio  ~/Downloads/Softwares/  ja existe"
+else
+    echo -e "\n\n\n\n Criando diretorio ~/Downloads/Softwares/ "
+    mkdir -p ~/Downloads/Softwares/
+fi
+
 
 cd ~/Downloads/Softwares/
 
