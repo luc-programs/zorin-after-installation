@@ -423,6 +423,21 @@ fi
 
 
 
+## Download Balena Etcher Icon
+if [ -e Etcher-icon.png ];
+then
+    echo "O arquivo  Etcher-icon.png  ja existe"
+    sudo mkdir /opt/balena-etcher-icon/
+    sudo cp Etcher-icon.png /opt/balena-etcher-icon/
+else
+    echo -e "\n\n\n\n Balena Etcher Icon"
+    sudo mkdir /opt/balena-etcher-icon/
+    wget https://github.com/luc-programs/balena-etcher/releases/download/Balen-Etcher/Etcher-icon.png
+    sudo cp Etcher-icon.png /opt/balena-etcher-icon/
+fi
+
+
+
 ## Download BrModelo
 if [ -e br-modelo-3.3.2.deb ];
 then
