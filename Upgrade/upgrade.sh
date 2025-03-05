@@ -7,10 +7,6 @@ sudo apt upgrade -y
 sudo sed -ie 's\intellij-idea-ultimate .*%u\/opt/intellij-idea-ultimate/bin/idea\g' /usr/share/applications/intellij-idea-ultimate.desktop
 
 
-## Mudando o arquivo executavel que é um shell script para o arquivo binario da IDE Clion
-sudo sed -ie 's\clion .*%u\/opt/clion/bin/clion\g' /usr/share/applications/clion.desktop
-
-
 ## Mudando o arquivo executavel que é um shell script para o arquivo binario da IDE PhpStorm
 sudo sed -ie 's\phpstorm .*%u\/opt/phpstorm/bin/phpstorm\g' /usr/share/applications/phpstorm.desktop
 
