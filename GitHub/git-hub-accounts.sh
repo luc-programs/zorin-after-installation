@@ -23,7 +23,7 @@ then
     echo "O arquivo  ~/.ssh/config  ja existe"
 else
     echo "Copiando o arquivo config para pasta ~/.ssh/"
-    git clone https://github.com/lucgithub343/git-hub-accounts.git
+    git https://github.com/luc-programs/git-hub-accounts.git
     cd git-hub-accounts/
     cp config ~/.ssh/
 fi
