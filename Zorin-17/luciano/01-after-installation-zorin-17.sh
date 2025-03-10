@@ -461,6 +461,23 @@ fi
 
 
 
+## Download DaVinci Resolve
+if [ -e DaVinci_Resolve_18.6.6_Linux.run ];
+then
+    echo "O arquivo  DaVinci_Resolve_18.6.6_Linux.run  ja existe"
+else
+    echo -e "\n\n\n\n DaVinci Resolve"
+    wget https://github.com/luc-programs/DaVinciResolve/releases/download/DaVinci/davinci-partaa
+    wget https://github.com/luc-programs/DaVinciResolve/releases/download/DaVinci/davinci-partab
+    wget https://github.com/luc-programs/DaVinciResolve/releases/download/DaVinci/davinci-partac
+    wget https://github.com/luc-programs/DaVinciResolve/releases/download/DaVinci/davinci-partad
+
+    ## Reunindo os arquivos
+    cat davinci-part* > DaVinci_Resolve_18.6.6_Linux.run
+fi
+
+
+
 ## Download DBeaver
 if [ -e dbeaver-le_23.2.0_amd64.deb ];
 then
