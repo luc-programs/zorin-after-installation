@@ -614,6 +614,11 @@ sudo dpkg -i microsoft-edge-stable_130.0.2849.46-1_amd64.deb
 sudo apt --fix-broken install -y
 
 
+## Mysql workbench
+sudo dpkg -i mysql-workbench-community_8.0.42-1ubuntu22.04_amd64.deb
+sudo apt --fix-broken install -y
+
+
 # Only Office
 sudo dpkg -i onlyoffice-desktopeditors_amd64.deb
 sudo apt --fix-broken install -y

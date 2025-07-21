@@ -557,12 +557,12 @@ fi
 
 
 ## Download MySql Workbench
-if [ -e mysql-workbench-community_8.0.36-1ubuntu22.04_amd64.deb ];
+if [ -e mysql-workbench-community_8.0.42-1ubuntu22.04_amd64.deb ];
 then
-    echo "O arquivo   mysql-workbench-community_8.0.36-1ubuntu22.04_amd64.deb  ja existe"
+    echo "O arquivo   mysql-workbench-community_8.0.42-1ubuntu22.04_amd64.deb  ja existe"
 else
     echo -e "\n\n\n\n MySql Workbench"
-    wget https://github.com/luc-programs/mysql-workbench/releases/download/MySql-Workbench/mysql-workbench-community_8.0.36-1ubuntu22.04_amd64.deb
+    wget https://github.com/luc-programs/mysql-workbench/releases/download/MySql-Workbench/mysql-workbench-community_8.0.42-1ubuntu22.04_amd64.deb
 fi
 
 
