@@ -500,6 +500,16 @@ fi
 
 
 
+## Download HeidiSql
+if [ -e HeidiSQL_12.11.1.167.deb ];
+then
+    echo "O arquivo  HeidiSQL_12.11.1.167.deb  ja existe"
+else
+    echo -e "\n\n\n\n HeidiSql"
+    wget https://github.com/luc-programs/heidi-sql/releases/download/HeidiSql/HeidiSQL_12.11.1.167.deb
+fi
+
+
 
 ## Download Insync
 if [ -e insync_3.9.4.60020-jammy_amd64.deb ];

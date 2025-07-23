@@ -579,6 +579,11 @@ sudo dpkg -i br-modelo-3.3.2.deb
 sudo apt --fix-broken install -y
 
 
+## HeidiSQL
+sudo dpkg -i HeidiSQL_12.11.1.167.deb
+sudo apt --fix-broken install -y
+
+
 ## JDK
 sudo dpkg -i jdk-21_linux-x64_bin.deb
 sudo apt --fix-broken install -y
